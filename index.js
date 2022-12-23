@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json({ extended: true }));
 app.use('/data', express.static(path.join(__dirname, 'data')));
 
-app.use('/api', require('./routes/cancel.route'));
+app.use('/api', require('./routes/update.route'));
 
 const PORT = 5000;
 
