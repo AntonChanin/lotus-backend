@@ -9,11 +9,13 @@ const app = express();
 
 app.use(express.json({ extended: true }));
 
+app.use('/rooms', express.static(path.join(__dirname, 'rooms')));
+
+app.use('/api', require('./routes/update.route'));
+
 const PORT = 5000;
 
 app.listen(PORT, () => {});
-
-
 
 const server = new WebSocket.Server({ port: PORT + 1 });
 
