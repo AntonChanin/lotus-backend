@@ -10,7 +10,8 @@ const timer = (props) => {
   seconds = initialSeconds;
 
   let myInterval = setInterval(
-    () => {   
+    () => {
+      callback?.();
       if (seconds > 0) {
         seconds -= 1;
       }
@@ -23,8 +24,7 @@ const timer = (props) => {
             order = 0;
           }
           minutes = initialMinute;
-          seconds = initialSeconds;
-          callback?.();
+          seconds = initialSeconds;        
         } else {
           minutes -=  1;
           seconds = 59;
